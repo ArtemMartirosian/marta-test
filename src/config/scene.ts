@@ -41,7 +41,6 @@ export const SCENE_CONFIG = {
   filmbackHeightMm: 13.365,
   model: {
     src: assetUrl('SM_highlight_A_7F.fbx'),
-    // Единственная позиция модели для всех кадров. Единицы сцены — сантиметры.
     positionScene: { x: 10_800, y: 150, z: 7_800 },
   },
   frames: [

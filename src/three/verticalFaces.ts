@@ -8,11 +8,6 @@ import {
 
 const DEFAULT_MAX_ABS_WORLD_NORMAL_Y = 0.5
 
-/**
- * Builds a render-only geometry containing facade-facing triangles while
- * removing horizontal floor/ceiling caps. The full source geometry remains
- * untouched and can still be used as the raycast target.
- */
 export const createVerticalFaceGeometry = (
   source: BufferGeometry,
   worldMatrix: Matrix4,

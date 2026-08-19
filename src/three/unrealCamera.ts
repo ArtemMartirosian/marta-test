@@ -7,10 +7,6 @@ import {
 
 import type { UnrealCameraConfig } from '../config/scene'
 
-/**
- * FBXLoader leaves this asset in centimetre-sized scene units: its floor height
- * is ~399 units for the documented 4 m. Camera positions therefore use 1:1 cm.
- */
 export const CENTIMETRES_TO_SCENE = 1
 
 const mapUnrealVectorToThree = (vector: Vector3Like) =>
@@ -60,11 +56,6 @@ export const verticalFovDegrees = (
     2 * Math.atan(filmbackHeightMm / (2 * focalLengthMm)),
   )
 
-/**
- * Matches a centred CSS object-fit: cover crop. The source camera's vertical
- * FOV stays unchanged for narrow viewports. Wide viewports preserve the source
- * horizontal FOV by reducing the effective vertical FOV.
- */
 export const coverVerticalFovDegrees = (
   sourceVerticalFovDeg: number,
   imageAspect: number,
@@ -113,4 +104,3 @@ export const applyUnrealCamera = (
   camera.updateProjectionMatrix()
   camera.updateMatrixWorld(true)
 }
-
